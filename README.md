@@ -4,7 +4,7 @@ API REST desarrollada con Django y Django REST Framework (DRF) para la gestión 
 
 Descripción
 
-Este proyecto fue desarrollado como parte del taller de nivelación de la asignatura **Tendencias**, aplicando buenas prácticas de desarrollo backend con Django y Django REST Framework.
+Este proyecto fue desarrollado como parte del taller de nivelación de la asignatura Tendencias de software, aplicando buenas prácticas de desarrollo backend con Django y Django REST Framework.
 
 La API permite administrar:
 
