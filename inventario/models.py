@@ -1,7 +1,8 @@
 from django.db import models
 
+
 class Categoria(models.Model):
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=120)
     descripcion = models.TextField()
 
     def __str__(self):
@@ -9,17 +10,17 @@ class Categoria(models.Model):
 
 
 class Producto(models.Model):
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=120)
     precio = models.DecimalField(
         max_digits=10,
         decimal_places=2
     )
-
-    stock = models.PositiveIntegerField()
+    stock = models.PositiveIntegerField(default=0)
 
     categoria = models.ForeignKey(
         Categoria,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='productos'
     )
 
     creado = models.DateTimeField(
