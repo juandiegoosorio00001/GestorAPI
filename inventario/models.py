@@ -16,7 +16,7 @@ class Producto(models.Model):
         decimal_places=2
     )
     stock = models.PositiveIntegerField(default=0)
-
+    
     categoria = models.ForeignKey(
         Categoria,
         on_delete=models.CASCADE,

@@ -26,7 +26,6 @@ class ProductoSerializer(serializers.ModelSerializer):
             'creado'
         ]
 
-    # Validación personalizada
     def validate_precio(self, value):
         if value < 0:
             raise serializers.ValidationError(

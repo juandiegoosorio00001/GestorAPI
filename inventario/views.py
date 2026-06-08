@@ -13,7 +13,6 @@ class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
 
-    # Solo autenticados pueden escribir
     def get_permissions(self):
         if self.action in ['create', 'update',
                            'partial_update', 'destroy']:
@@ -25,7 +24,6 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all().order_by('-creado')
     serializer_class = ProductoSerializer
 
-    # filtros del taller
     filter_backends = [
         DjangoFilterBackend,
         SearchFilter,
@@ -36,7 +34,6 @@ class ProductoViewSet(viewsets.ModelViewSet):
     search_fields = ['nombre']
     ordering_fields = ['precio', 'stock', 'creado']
 
-    # permisos
     def get_permissions(self):
         if self.action in ['create', 'update',
                            'partial_update', 'destroy']:
